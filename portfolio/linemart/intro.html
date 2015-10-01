@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行動拍賣平台使用意圖問卷調查</title>
+    <link href="./import/bootstrap.min.css" rel="stylesheet" />
+    <style> 
+	    body{
+	    	font-family: Microsoft JhengHei;
+	    	background-color:#7bbbcc;
+	    }
+	    #content{
+	    	background-color:#fff; 
+	    	width:900px; 
+	    	margin:0 auto;
+	    	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	    	padding: 10px 20px 10px 20px;
+	    	margin-top: 20px;
+	    }
+        #menu{
+        	position: absolute;
+			right: 40px;
+			top: 80px;
+			width: 340px;
+        }
+        #introText{
+        	position: absolute;
+			right: 40px;
+			top: 180px;
+        	width: 330px;
+        	height: 250px;
+			background-color: #FFF0DF;
+			padding: 30px;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			margin-top: 20px;
+        }
+        .phoneScreen{
+        	position: absolute; 
+        	top: 122px;
+			left: 46px;
+        	width: 350px; 
+        	height: 597px; 
+        	overflow-x: hidden;
+        }
+        .phoneScreen_hidden{
+        	position: absolute; 
+        	top: 122px;
+			left: 46px;
+        	width: 350px; 
+        	height: 597px; 
+        	overflow: hidden;
+        }
+        .slides{
+        	cursor: move; 
+        	position: absolute; 
+        	left: 0px; 
+        	top: 0px; 
+        	width: 350px; 
+        	height: 597px; 
+        	overflow: hidden;
+        }
+        .btnArea{
+        	bottom: 25px; 
+        	position: absolute; 
+        	width: 280px;
+        	text-align: center;
+        }
+        .red{
+	    	color:#D01717;
+	    	font-weight: bold;
+	    }
+    </style>
+    <!-- it works the same with all jquery version from 1.x to 2.x -->
+    <script type="text/javascript" src="./import/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (40KB) instead for release -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="./import/jssor.js"></script>
+    <script type="text/javascript" src="./import/jssor.slider.js"></script>
+    <script>
+    	var nowStep=0;
+        jQuery(document).ready(function ($) {
+        	function changeBtn(x){
+           		if(nowStep==0){
+           			$(".btn").removeClass("btn-info");
+           			$(".btn").addClass("btn-default");
+           		}
+           		else if(nowStep<6){
+           			$(".btn").removeClass("btn-info");
+           			$(".btn").addClass("btn-default");
+           			$("#btnInterface").removeClass("btn-default");
+           			$("#btnInterface").addClass("btn-info");
+           		}
+           		else if(nowStep<9){
+           			$(".btn").removeClass("btn-info");
+           			$(".btn").addClass("btn-default");
+           			$("#btnBuy").removeClass("btn-default");
+           			$("#btnBuy").addClass("btn-info");
+           		}
+           		else{
+           			$(".btn").removeClass("btn-info");
+           			$(".btn").addClass("btn-default");
+           			$("#btnPublish").removeClass("btn-default");
+           			$("#btnPublish").addClass("btn-info");
+           		}
+        	}
+
+        	$("button.next").click(function(){
+        		var nextStep=nowStep+1;
+		        $("#step"+nowStep).fadeOut();
+		        $("#step"+nextStep).fadeIn();
+		        nowStep++;
+		        changeBtn();
+		    });
+		    $("button.prev").click(function(){
+        		var preStep=nowStep-1;
+		        $("#step"+nowStep).fadeOut();
+		        $("#step"+preStep).fadeIn();
+		        nowStep--;
+		        changeBtn();
+		    });
+		    $("#btnInfo").click(function(){
+        		$("#step"+nowStep).fadeOut();
+		        $("#step0").fadeIn();
+		        nowStep=0;
+		        changeBtn();
+        	});
+		    $("#btnInterface").click(function(){
+		        $("#step"+nowStep).fadeOut();
+		        $("#step1").fadeIn();
+		        nowStep=1;
+		        changeBtn();
+		    });
+		    $("#btnBuy").click(function(){
+		    	console.log(nowStep);
+		        $("#step"+nowStep).fadeOut();
+		        $("#step6").fadeIn();
+		        nowStep=6;
+		        changeBtn();
+		    });
+		     $("#btnPublish").click(function(){
+		    	console.log(nowStep);
+		        $("#step"+nowStep).fadeOut();
+		        $("#step9").fadeIn();
+		        nowStep=9;
+		        changeBtn();
+		    });
+            //Reference http://www.jssor.com/development/slider-with-caption-jquery.html
+            //Reference http://www.jssor.com/development/reference-ui-definition.html#captiondefinition
+            //Reference http://www.jssor.com/development/tool-caption-transition-viewer.html
+
+            var options = {
+                $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+            };
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+        });
+    </script>    
+</head>
+</head>
+<body>
+<div id="content">
+	<div style="position:relative;padding:20px;">
+		<img src="./image/phone.png">
+		<div id="menu">
+			<h2><a href="#" id="btnInfo">Line Mart買賣市集</a></h2>
+			<p align="center">
+				<a href="#" class="btn btn-default btn-lg" id="btnInterface">介面介紹</a>
+				<a href="#" class="btn btn-default btn-lg" id="btnBuy">購買商品</a>
+				<a href="#" class="btn btn-default btn-lg" id="btnPublish">刊登商品</a>
+			</p>
+
+			<div style="text-align:center; margin-top:500px;">
+				<a href="https://docs.google.com/forms/d/18v3A4EYsCafxHEQ0G8OV2WFwakD6IN7bYc23-dPXP0g/viewform" target="_blank" class="btn btn-success btn-lg">直接填寫問卷</a>
+			</div>
+		</div>
+		<div id="step0" class="interface">
+		    <div class="phoneScreen_hidden">
+				<img u="image" src="./image/001.png" width="350px" alt="簡介" />
+		    </div>
+			<div id="introText">
+				<p><b>Line Mart>></b></p>
+				<p>　　Line Mart買賣市集是行動通訊品牌 Line 於 <span class="red">2015 年 3 月推出的行動拍賣平台</span>，使用者可利用<span class="red">行動裝置</span>購物或在平台上刊登物品。</p>
+				<div class="btnArea">
+					<button id="1" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+		<div id="step1" class="interface" style="display:none;">
+			<!-- Jssor Slider Begin -->
+		    <!-- You can move inline styles to css file or css block. -->
+		    <div id="slider1_container" class="phoneScreen_hidden">
+		        <!-- Loading Screen -->
+		        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+		            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+		                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+		            </div>
+		            <div style="position: absolute; display: block; background: url(./image/loading.gif) no-repeat center center;
+		                top: 0px; left: 0px;width: 100%;height:100%;">
+		            </div>
+		        </div>
+
+		        <!-- Slides Container -->
+		        <div u="slides" class="slides">
+		            <div>
+		                <img u="image" src="./image/a01.png" alt="商品類別" />
+		            </div>
+		            <div>
+		                <img u="image" src="./image/a02.png" alt="商品類別" />
+		            </div>
+		            <div>
+		                <img u="image" src="./image/a03.png" alt="商品類別" />
+		            </div>
+		            <div>
+		                <img u="image" src="./image/a04.png" alt="商品類別" />
+		            </div>
+		            <div>
+		                <img u="image" src="./image/a05.png" alt="商品類別" />
+		            </div>
+		        </div>
+		    </div>
+		    <!-- Jssor Slider End -->
+			<div id="introText">
+				<p><b>瀏覽商品>></b></p>
+				<p>　　<span class="red">左右滑動</span>可以切換商品類別。</p>
+				<div class="btnArea">
+					<button id="1" class="prev">上一步</button>
+					<button id="2" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step2" style="display:none;" class="interface">
+		    <div class="phoneScreen">
+				<img u="image" src="./image/a06.png" width="350px" alt="詳細商品內容" />
+		    </div>
+			<div id="introText">
+				<p><b>瀏覽商品>></b></p>
+				<p>　　點選商品可查看詳細內容。</p>
+				<div class="btnArea">
+					<button id="2" class="prev">上一步</button>
+					<button id="3" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step3" style="display:none;" class="interface">
+			<div class="phoneScreen_hidden">
+				<div style="position: absolute; top: 485px; left: 105px;">
+					<img u="image" src="./image/arrow.gif" />
+				</div>
+				<img u="image" src="./image/a07.png" width="350px" alt="我的最愛" />
+		    </div>
+		    <!-- Jssor Slider End -->
+		    
+			<div id="introText">
+				<p><b>我的最愛>></b></p>
+				<p>　　點選下方工具列<span class="red">愛心圖示</span>，可觀看收藏的商品及品牌。</p>
+				<div class="btnArea">
+					<button id="3" class="prev">上一步</button>
+					<button id="4" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step4" style="display:none;" class="interface">
+			<div class="phoneScreen_hidden">
+				<div style="position: absolute; top: 485px; left: 190px;">
+					<img u="image" src="./image/arrow.gif" />
+				</div>
+				<img u="image" src="./image/a08.png" width="350px" alt="搜尋商品" />
+		    </div>
+		    
+			<div id="introText">
+				<p><b>搜尋商品>></b></p>
+				<p>　　點選下方工具列<span class="red">搜尋圖示</span>，可搜尋商品，並可觀看所有商品類別。</p>
+				<div class="btnArea">
+					<button id="4" class="prev">上一步</button>
+					<button id="5" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step5" style="display:none;" class="interface">
+			<div class="phoneScreen_hidden">
+				<img u="image" src="./image/a09.png" width="350px" alt="個人頁面" />
+  
+		    </div>
+
+			<div id="introText">
+				<p><b>個人頁面>></b></p>
+				<p>　　個人頁面除可設定個人資訊外，也可管理商店、刊登商品。</p>
+				<div class="btnArea">
+					<button id="5" class="prev">上一步</button>
+					<button id="6" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step6" style="display:none;" class="buy">
+			<div class="phoneScreen_hidden">
+				<div style="position: absolute; top: 455px; left: 263px;">
+					<img u="image" src="./image/arrow.gif" />
+				</div>
+				<img u="image" src="./image/b01.png" width="350px" alt="購買商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>購買商品>></b></p>
+				<p>　　選擇好數量和樣式後，點選<span class="red">購買</span>。</p>
+				<div class="btnArea">
+					<button id="6" class="prev">上一步</button>
+					<button id="7" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step7" style="display:none;" class="buy">
+			<div class="phoneScreen">
+				<img u="image" src="./image/b02.png" width="350px" alt="購買商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>購買商品>></b></p>
+				<p>　　點選後，選擇交易方式並填寫收件人資訊，確認無誤後點選<span class="red">確認購物內容</span>。</p>
+				<div class="btnArea">
+					<button id="7" class="prev">上一步</button>
+					<button id="8" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step8" style="display:none;" class="buy">
+			<div class="phoneScreen_hidden">
+				<img u="image" src="./image/b03.png" width="350px" alt="購買商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>購買商品>></b></p>
+				<p>　　購物完成囉！</p>
+				<div class="btnArea">
+					<button id="8" class="prev">上一步</button>
+					<button id="9" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="step9" style="display:none;" class="publish">
+			<div class="phoneScreen_hidden">
+				<div style="position: absolute; top: 465px; left: 147px;">
+					<img u="image" src="./image/arrow.gif" />
+				</div>
+				<img u="image" src="./image/c01.png" width="350px" alt="刊登商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>刊登商品>></b></p>
+				<p>　　從個人頁面點選<span class="red">刊登商品</span>，選擇相片，輸入名稱、售價、狀態、寄送方式等。</p>
+				<div class="btnArea">
+					<button id="8" class="prev">上一步</button>
+					<button id="9" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+		<div id="step10" style="display:none;" class="publish">
+			<div class="phoneScreen_hidden">
+				<img u="image" src="./image/c02.png" width="350px" alt="刊登商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>刊登商品>></b></p>
+				<p>　　再次確認商品資訊。</p>
+				<div class="btnArea">
+					<button id="8" class="prev">上一步</button>
+					<button id="9" class="next">下一步</button>
+				</div>
+			</div>
+		</div>
+		<div id="step11" style="display:none;" class="publish">
+			<div class="phoneScreen_hidden">
+				<img u="image" src="./image/c03.png" width="350px" alt="刊登商品" />
+		    </div>
+
+			<div id="introText">
+				<p><b>購買商品>></b></p>
+				<p>　　刊登完成囉！</p>
+				<p align="center">
+					<button id="8" class="prev">上一步</button>
+				</p>
+				<br>	
+				<p>
+					<span style="font-weight:bold;">Line Mart買賣市集App介紹到此結束，敬請您協助填寫問卷。</span>
+				</p>
+				<p align="center">
+					<button onclick="window.open('https://docs.google.com/forms/d/18v3A4EYsCafxHEQ0G8OV2WFwakD6IN7bYc23-dPXP0g/viewform','_blank');">填寫問卷</button>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</body>
+</html>
+</body>
+</html>

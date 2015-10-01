@@ -142,7 +142,6 @@ h2{
     border-bottom: 1px solid #E8E8E8;
     padding: 50px 0px 40px 0px;
 }
-
 .detail-left{
     /*background-color: #333 ;*/
     float: left;
@@ -163,6 +162,15 @@ h2{
 }
 .detail-right-content > .bold{
     font-size: 1.4em;
+}
+.mfp-content{
+
+    margin: 0px auto;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    line-height: 1.8em;
+    text-align: justify;
+    text-justify:inter-ideograph;
 }
 /* ==========================================================================
    navbar
@@ -460,7 +468,7 @@ section#portfolio .title{
     width: 25%;
     margin-bottom: 40px;
 }
-.portfolio-icon:hover .overlay{
+.portfolio-padding:hover .overlay{
     opacity: 0.75;
     transition: opacity 0.3s ease-in-out 0s;
 }
@@ -485,23 +493,38 @@ section#portfolio .title{
 .overlay-content{
     margin:20px;
     color:#fff;
+        line-height: 1em;
 }
 .overlay-content p{
     font-size: 0.8em;
     color: #eee;
-    margin-top: 3px;
+    margin-top: 10px;
 }
 .white-popup {
   position: relative;
   background: #FFF;
   padding-top: 40px;
   width: auto;
-  max-width: 600px;
+  max-width: 700px;
   margin: 20px auto;
 }
 .white-popup img{
-    width: 600px;
+    width: 100%;
 }
+.white-popup > img{
+    box-shadow: 0px 1px 5px 0px #4A4A4A;
+}
+.popup-content{
+    padding: 20px 25px 10px 25px;
+}
+.slider > .popup-content{
+    padding-top: 0px;
+}
+.tags{
+    font-size: 0.8em;
+}
+
+    
 /* ==========================================================================
    footer
    ========================================================================== */
@@ -628,7 +651,7 @@ footer{
     .portfolio-padding{
         position: relative;
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
         margin: 0px auto;
     }
 }

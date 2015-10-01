@@ -1,0 +1,398 @@
+﻿body {
+    background: #e1e1e1 url(./bg_sand.png) repeat 0 0;
+	font-family:華康兒風體W4,華康兒風體W3,DFErW3-B5,微軟正黑體,新細明體;
+}
+
+div#m-top
+{
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+div#m-top-box
+{
+	position: relative;
+	width: 1024px;
+	height: 130px;
+	top: 30px;
+	margin: 0 auto;
+	background: url(./back1.png) repeat;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+div#m-logo
+{
+	position: relative;
+	width: 0;
+	height: auto;
+	top: 30px;
+	left: 30px;
+	padding-bottom: 40px;	/* 為了向下頂出 m-list-main 的空間 */
+	background: #333;
+	border: 0;
+	z-index: 1;
+    /*visibility: hidden;*/
+}
+
+div#m-list-main
+{
+	position: absolute;
+	width: 615px;
+	height: 42px;
+	left: 401px;
+	bottom: 41px;
+	background: transparent;
+	border: 0;
+	z-index: 99;
+	top: 100px;
+}
+
+div#m-list-misc
+{
+    position: absolute;
+    bottom: 3px;
+    right: 2px;
+    background: transparent;
+    border: 0px solid #333; /* DEBUG */
+    z-index: 0;
+}
+
+input#good-srch-input
+{
+    position: relative;
+    background: #fff;
+    height: 20px;
+    width: 130px;
+    top: 5px;
+    left: 15px;
+    border: 0;
+    font-size: 1em;
+}
+
+div#good-srch-input-box
+{
+    float: right;
+    width: 141px;
+    height: 30px;
+    background: #fff url(../CSS/PIC/ic_srch_input_box.gif) no-repeat 0 0;
+}
+
+a#good-srch
+{
+    float: right;
+    width: 27px;
+    height: 30px;
+    background: #fff url(../CSS/PIC/ic_srch.gif) no-repeat 0 0;
+}
+
+a#good-srch:hover, a#good-srch:active
+{
+    background: #fff url(../CSS/PIC/ic_srch_hover.gif) no-repeat 0 0;
+}
+
+a#good-srch-adv
+{
+    float: right;
+    width: 27px;
+    height: 30px;
+    background: #fff url(../CSS/PIC/ic_adv_srch.gif) no-repeat 0 0;
+}
+
+a#good-srch-adv:hover, a#good-srch-adv:active
+{
+    background: #fff url(../CSS/PIC/ic_adv_srch_hover.gif) no-repeat 0 0;
+}
+
+div.good-srch-split
+{
+    float: right;
+    width: 8px;
+    height: 30px;
+    background:transparent url(../CSS/PIC/ic_srch_split.png) no-repeat 0 0;
+}
+
+a#comm-fb
+{
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: #fff url(../CSS/PIC/ic_com_fb.gif) no-repeat 0 0;
+}
+
+a#comm-fb:hover, a#comm-fb:active
+{
+    background: #fff url(../CSS/PIC/ic_com_fb_hover.gif) no-repeat 0 0;
+}
+
+div.m-list-member
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 33px;
+    width: auto;   /* 待調整 */
+    background: transparent;
+    border: 0px solid #aaa; /* DEBUG */
+    z-index: 2;
+}
+
+div.m-list-member > a
+{
+    height: 33px;
+    text-align: center;
+	font-size:16px;
+	color:#000;
+}
+
+a#wanna-list
+{
+    font-weight: bold;
+    line-height: 30px;
+    width: 106px;
+    color: #666;
+    float: right;
+}
+
+a#wanna-list:hover, a#wanna-list:active
+{
+    color: #444;
+}
+
+a.member-op
+{
+    color: #999;
+    text-align: center;
+    line-height: 30px;
+    width: auto;
+    padding: 0 14px;
+    float: right;
+}
+
+a.member-op:hover, a.member-op:active
+{
+    color: #777;
+}
+
+div#horizontal-shadow-1, div#horizontal-shadow-2
+{
+    width: 100%;
+    height: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent url(./horizontal_shadow.png) repeat-x 0 0;
+    z-index: 2;
+}
+
+div.m-list-sub
+{
+	position: relative;
+	background: #2dbacc;
+	overflow: visible;
+	z-index: 1;
+    width: 100%;
+    top: 0;
+	/*display: none;*/
+}
+
+div#horizontal-shadow-2
+{
+	top: auto;
+	bottom: -13px;
+}
+
+div#m-bottom
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    background: transparent;
+    z-index: 0;
+}
+
+div#m-content-box
+{
+	position: relative;
+	width: 1024px;
+	min-height: 530px;
+	top: 30px;
+	bottom: 0;
+	margin: 0 auto 20px auto;
+	background: url(./back1.png) repeat;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	z-index: 0;
+}
+
+div#m-tail-box
+{
+    position: relative;
+    width: 1024px;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto 20px auto;
+	background: url(./back1.png) repeat;
+    border: 0px solid #ccc;
+    z-index: 0;
+}
+
+div#m-list-foot
+{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+#m-list-foot li
+{
+    float: left;
+    height: 50px;
+    padding: 0 25px;
+    line-height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+div#m-foot-box
+{
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    top: 0;
+    left: 0;
+    background:url(./images/foot.png) repeat;	
+    text-align: center;
+    color: #999;
+    line-height: 1.5em;
+    font-size: 1em;
+    border:none;
+
+}
+div#mFootBox{
+	background:url(../images/foot.png);
+	font-family:新細明體;
+	color:#fff;
+	padding-top:20px;
+	height:100px;	
+}
+
+a#m-ushop-link
+{
+    position: fixed;
+    width: 114px;
+    height: 23px;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    background: transparent url(../CSS/PIC/ushop_link.png) repeat-x 0 0;
+    z-index: 1;
+}
+a.member-op{
+	font-family:微軟正黑體;
+	font-size:14px;
+	}
+ul.list-row-main
+{
+    list-style: none outside none;
+}
+
+ul.list-row-main li
+{
+    float: left;
+    border-right: 5px solid #6ba6ce;
+    height: 50px;
+    padding: 0 25px;
+    line-height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+ul.list-row-main li a
+{
+    color: #000;
+	font-weight:900;
+}
+
+ul.list-row-main li a:hover, ul.list-row-main li:hover a
+{
+    color: #777;
+}
+
+ul.list-row-main li a:active, ul.list-row-main li:active a
+{
+    color: #777;
+}
+
+ul.list-row-main li.activated
+{
+    background: transparent url(../CSS/PIC/ic_navi_indicator.png) no-repeat bottom center;
+}
+
+div#m-list-foot ul li
+{
+    font-size: 1.1em;
+}
+
+div.list-row-sub-container
+{
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	border-left: 1px solid #1398AA;
+    border-right: 1px solid #1398AA;
+	overflow: hidden;   /* for containing floating objects */
+	background: transparent;
+}
+
+ul.list-row-sub
+{
+    list-style: none outside none;
+}
+
+ul.list-row-sub li
+{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 25px;
+    font-size: 1.1em;
+    background: transparent;
+    cursor: pointer;
+}
+
+ul.list-row-sub li a
+{
+    color: #fff;
+}
+
+ul.list-row-sub li a:hover, ul.list-row-sub li:hover a
+{
+    color: #fff;
+}
+
+ul.list-row-sub li a:active, ul.list-row-sub li:active a
+{
+    color: #fff;
+}
+
+ul.list-row-sub li:hover, ul.list-row-sub li.activated:hover
+{
+	background: #15ADC4;
+}
+
+ul.list-row-sub li:active, ul.list-row-sub li.activated:active
+{
+	background: #129eb5;
+}
+
+ul.list-row-sub li.activated
+{
+	background: #129eb5;
+}

@@ -1,0 +1,262 @@
+﻿
+/*------------------------------------------------------------------------- icon define */
+
+/* types and states */
+.mui-icon { width: 16px; height: 16px; background-image: url('PIC/icon_map_information.png'); display: inline-block; }
+.mui-icon.icon-btn { cursor: pointer; background-image: url('PIC/icon_map_btn_normal.png') !important; }
+.mui-icon.icon-btn:hover { cursor: pointer; background-image: url('PIC/icon_map_btn_hover.png') !important; }
+.mui-icon.icon-btn:active { cursor: pointer; background-image: url('PIC/icon_map_btn_activated.png') !important; }
+.mui-icon.icon-alert { background-image: url('PIC/icon_map_alert.png') !important; }
+
+/* positioning */
+.mui-icon-info { background-position: 0 0; }
+.mui-icon-close { background-position: -16px 0; }
+.mui-icon-edit { background-position: -32px 0; }
+.mui-icon-ok { background-position: -48px 0; }
+.mui-icon-delete { background-position: -64px 0; }
+
+/*---------- icon-24px NOTE: there is 1px gap between each icon ----------*/
+/* types and states */
+.mui-icon-24 { width: 24px; height: 24px; background-image: url('PIC/icon_map_24_btn_normal.png'); display: inline-block; }
+.mui-icon-24.icon-btn { cursor: pointer; background-image: url('PIC/icon_map_24_btn_normal.png') !important; }
+.mui-icon-24.icon-btn:hover { cursor: pointer; background-image: url('PIC/icon_map_24_btn_hover.png') !important; }
+.mui-icon-24.icon-btn:active { cursor: pointer; background-image: url('PIC/icon_map_24_btn_hover.png') !important; }
+
+/* positioning */
+.mui-icon-24-edit { background-position: 0 0; }
+.mui-icon-24-more { background-position: -25px 0; }
+.mui-icon-24-add { background-position: -50px 0; }
+.mui-icon-24-reload { background-position: -75px 0; }
+.mui-icon-24-del { background-position: -100px 0; }
+
+/*---------- icon-32px ----------*/
+/* types and states */
+.mui-icon-32 { width: 32px; height: 32px; background-image: url('PIC/icon_map_32_btn_normal.png'); display: inline-block; }
+.mui-icon-32.icon-btn { cursor: pointer; background-image: url('PIC/icon_map_32_btn_normal.png') !important; }
+.mui-icon-32.icon-btn:hover { cursor: pointer; background-image: url('PIC/icon_map_32_btn_hover.png') !important; }
+.mui-icon-32.icon-btn:active { cursor: pointer; background-image: url('PIC/icon_map_32_btn_hover.png') !important; }
+
+/* positioning */
+.mui-icon-32-edit { background-position: 0 0; }
+.mui-icon-32-detail { background-position: -32px 0; }
+
+/*------------------------------------------------------------------------- icon define end */
+
+.font-gray
+{
+    color: #CCC !important;
+}
+
+div.dialog-block
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: transparent url(PIC/simpleToolsPic/bg_lock_80b.png) repeat 0 0;
+	z-index: 9998;
+}
+
+div.dialog-block.transparent
+{
+	background: transparent;
+}
+
+div.dialog-title 
+{
+	color: #666; /*#0097D8*/
+	font-weight: bold;
+    width: 100%;
+    min-height: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: dotted 1px #aaa;
+}
+
+div.dialog-op
+{
+	color: #0097D8;
+	font-weight: bold;
+    width: 100%;
+    padding-top: 5px;
+    margin-top: 15px;
+    text-align: center;
+    border: 0;
+    border-top: dotted 0px #aaa;
+}
+
+div.dialog-title div.mui-icon
+{
+	float: right;
+	vertical-align: middle;
+}
+
+table.simple-dialog
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-collapse: collapse;
+	background-color: Transparent;
+	color: #666;
+	z-index: 9999;
+}
+
+table.simple-dialog, table.simple-dialog td, table.simple-dialog th, table.simple-dialog tr
+{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+tr.dialog-top
+{
+	min-height: 24px;
+    height: 24px;
+}
+
+tr.dialog-bottom
+{
+	min-height: 31px;
+    height: 31px;
+}
+
+td.dialog-center-c
+{
+	min-width: 350px;
+	width: 0;
+	vertical-align: top;
+}
+
+td.dialog-center-c .dialog-content
+{
+	min-width: 350px;
+	min-height: 35px;
+	width: auto;
+	height: auto;
+	overflow: auto;
+}
+
+.dialog-content.center
+{
+	text-align: center;
+}
+
+.dialog-content.alert-dlg-content
+{
+	background: url(PIC/ic_DRF/1308891300_exclamation.png) no-repeat center top;
+    padding-top: 50px;
+}
+
+.dialog-content.info-dlg-content
+{
+	background: url(PIC/ic_DRF/1308891308_info.png) no-repeat center top;
+    padding-top: 50px;
+}
+
+.dialog-content.smiley-dlg-content
+{
+	background: url(PIC/ic_DRF/1308891347_smiley.png) no-repeat center top;
+    padding-top: 50px;
+}
+
+.dialog-content.forbid-dlg-content
+{
+	background: url(PIC/ic_DRF/1308891705_minus_white.png) no-repeat center top;
+    padding-top: 50px;
+}
+
+.dialog-top-l, .dialog-top-r, .dialog-center-l, .dialog-center-r, .dialog-bottom-l, .dialog-bottom-r
+{
+	min-width: 31px;
+    width: 31px;
+    padding: 0;
+}
+
+/* note: here borrows the simpleToolsPic's png */
+
+.dialog-top-l {background: url(PIC/simpleToolsPic/toast_frame01_w.png) no-repeat right top;} 
+.dialog-top-c {background: url(PIC/simpleToolsPic/toast_frame02_w.png) repeat-x 0 0;}  
+.dialog-top-r {background: url(PIC/simpleToolsPic/toast_frame03_w.png) no-repeat 0 0;}  
+.dialog-center-l {background: url(PIC/simpleToolsPic/toast_frame04_w.png) repeat-y right top;}  
+.dialog-center-c {background: url(PIC/simpleToolsPic/toast_frame05_w.png) repeat 0 0; text-align: left; font-size: 13px;}  
+.dialog-center-r {background: url(PIC/simpleToolsPic/toast_frame06_w.png) repeat-y 0 0;}  
+.dialog-bottom-l {background: url(PIC/simpleToolsPic/toast_frame07_w.png) no-repeat right top;}  
+.dialog-bottom-c {background: url(PIC/simpleToolsPic/toast_frame08_w.png) repeat-x 0 0;}  
+.dialog-bottom-r {background: url(PIC/simpleToolsPic/toast_frame09_w.png) no-repeat 0 0;}
+
+/* BugFix for IE */
+table.simple-dialog td
+{
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */
+	zoom: 1;
+}
+
+/* --- waitingDlg style: start --- */
+
+table.simple-waiting
+{
+	position: absolute;
+	top: 140px;
+	left: 430px;
+	border-collapse: collapse;
+	background-color: Transparent;
+	color: #ddd;
+	z-index: 9999;
+}
+
+table.simple-waiting, table.simple-waiting td, table.simple-waiting th, table.simple-waiting tr
+{
+	border: 0;
+}
+
+tr.waiting-top
+{
+    height: 24px;
+}
+
+tr.waiting-bottom
+{
+    height: 31px;
+}
+
+.waiting-top-l, .waiting-top-r, .waiting-center-l, .waiting-center-r, .waiting-bottom-l, .waiting-bottom-r
+{
+    width: 31px;
+    padding: 0;
+}
+
+div.waiting-img
+{
+	width: 48px;
+	height:  48px;
+	border: dotted 0px #555;
+	margin: 1em auto 1.5em auto;
+	background: url(PIC/icon_loading_ffffff_555555_48.gif) no-repeat 0 0;
+}
+
+/* note: here borrows the simpleToolsPic's png */
+
+.waiting-top-l {background: url(PIC/simpleToolsPic/toast_frame01.png) no-repeat right top;} 
+.waiting-top-c {background: url(PIC/simpleToolsPic/toast_frame02.png) repeat-x 0 0;}  
+.waiting-top-r {background: url(PIC/simpleToolsPic/toast_frame03.png) no-repeat 0 0;}  
+.waiting-center-l {background: url(PIC/simpleToolsPic/toast_frame04.png) repeat-y right top;}  
+.waiting-center-c {background: url(PIC/simpleToolsPic/toast_frame05.png) repeat 0 0; text-align: center; font-size: 13px;}  
+.waiting-center-r {background: url(PIC/simpleToolsPic/toast_frame06.png) repeat-y 0 0;}  
+.waiting-bottom-l {background: url(PIC/simpleToolsPic/toast_frame07.png) no-repeat right top;}  
+.waiting-bottom-c {background: url(PIC/simpleToolsPic/toast_frame08.png) repeat-x 0 0;}  
+.waiting-bottom-r {background: url(PIC/simpleToolsPic/toast_frame09.png) no-repeat 0 0;}
+
+/* BugFix for IE */
+table.simple-waiting td
+{
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */
+	zoom: 1;
+}
+
+/* --- waitingDlg style: end --- */

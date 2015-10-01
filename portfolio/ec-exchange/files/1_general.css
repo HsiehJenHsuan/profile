@@ -1,0 +1,30 @@
+﻿.clickable
+{
+    cursor: pointer;
+}
+
+.font-blue
+{
+    color: #0097D8;
+}
+
+a {text-decoration: none; outline: none; cursor: pointer;color: #2CB5E6;}
+a:link {color: #2CB5E6;}			    /* unvisited link */
+a:visited {color: #2CB5E6;}			/* visited link */
+a:hover {color: #0E9CCF;}			/* mouse over link 00C4FF */
+a:active {color: #44ddFF;}			/* selected link 0089B3*/
+
+.align-r
+{
+    text-align: right;
+}
+
+.align-m
+{
+    text-align: center;
+}
+
+.font-bold
+{
+    font-weight: bold;
+}
