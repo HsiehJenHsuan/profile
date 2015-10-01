@@ -15,7 +15,7 @@ $(function() {
   
   setTimeout(function() {
     $('#title').fitText(1, { minFontSize: '20px', maxFontSize: '90px' });
-}, 100);
+  }, 100);
 
   $('.scrollwatch').scrollWatch(function (focus) {
       //console.log(focus);
