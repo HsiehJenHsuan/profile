@@ -103,7 +103,7 @@ a, a:link, a:visited{
     color:#009534;
     text-decoration: none;
 }
-a:hover{
+a:hover, a:focus{
     color:#00C043;
     text-decoration: none;
 }
@@ -265,7 +265,7 @@ section#about a, section#about a:link, section#about a:visited{
     color: #555;
     margin-right: 3px;
 }
-section#about a:hover{
+section#about a:hover, section#about a:focus{
     color: #888;
 }
 div#profile-pic{
@@ -462,7 +462,8 @@ section#portfolio .title{
     width: 25%;
     margin-bottom: 40px;
 }
-.portfolio-padding:hover .overlay{
+.portfolio-padding:hover .overlay,
+.portfolio-padding:focus .overlay{
     opacity: 0.75;
     transition: opacity 0.3s ease-in-out 0s;
 }
