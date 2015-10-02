@@ -323,16 +323,139 @@ li.skill-bar{
     width: 100%;
 }
 #toeic-bg{
-    width: 93%;
+    width: 85%;
 }
 li.skill-bar .bar-expand{
     position: absolute;
     background-color: #333;
     height: 30px;
     margin-top: 0px;
-    width: 0%;
+}
+li.skill-bar .html{
+    width: 75%;
+    -webkit-animation-name: skill-html; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-html;
+    animation-duration: 2s;
+}
+li.skill-bar .css{
+    width: 72%;
+    -webkit-animation-name: skill-css; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-css;
+    animation-duration: 2s;
+}
+li.skill-bar .js{
+    width: 55%;
+    -webkit-animation-name: skill-js; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-js;
+    animation-duration: 2s;
+}
+li.skill-bar .php{
+    width: 60%;
+    -webkit-animation-name: skill-php; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-php;
+    animation-duration: 2s;
+}
+li.skill-bar .obj-c{
+    width: 40%;
+    -webkit-animation-name: skill-obj-c; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-obj-c;
+    animation-duration: 2s;
+}
+li.skill-bar .java{
+    width: 35%;
+    -webkit-animation-name: skill-java; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-java;
+    animation-duration: 2s;
+}
+li.skill-bar .toeic{
+    width: 70%;
+    -webkit-animation-name: skill-toeic; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: skill-toeic;
+    animation-duration: 2s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-html {
+    from {width: 0%;}
+    to {width: 75%;}
 }
 
+/* Standard syntax */
+@keyframes skill-html {
+    from {width: 0%;}
+    to {width: 75%;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-css {
+    from {width: 0%;}
+    to {width: 72%;}
+}
+
+/* Standard syntax */
+@keyframes skill-css {
+    from {width: 0%;}
+    to {width: 72%;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-js {
+    from {width: 0%;}
+    to {width: 55%;}
+}
+
+/* Standard syntax */
+@keyframes skill-js {
+    from {width: 0%;}
+    to {width: 55%;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-php {
+    from {width: 0%;}
+    to {width: 60%;}
+}
+
+/* Standard syntax */
+@keyframes skill-php {
+    from {width: 0%;}
+    to {width: 60%;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-obj-c {
+    from {width: 0%;}
+    to {width: 40%;}
+}
+
+/* Standard syntax */
+@keyframes skill-obj-c {
+    from {width: 0%;}
+    to {width: 40%;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes skill-java {
+    from {width: 0%;}
+    to {width: 35%;}
+}
+
+/* Standard syntax */
+@keyframes skill-java {
+    from {width: 0%;}
+    to {width: 35%;}
+}
+@-webkit-keyframes skill-toeic {
+    from {width: 0%;}
+    to {width: 70%;}
+}
+
+/* Standard syntax */
+@keyframes skill-toeic {
+    from {width: 0%;}
+    to {width: 70%;}
+}
 /* ==========================================================================
    section#portfolio
    ========================================================================== */
@@ -526,10 +649,6 @@ footer{
         font-size: 1.2em;
 
     }
-    div#profile-pic{
-        width: 120px;
-        height: 120px;
-    }
     .portfolio-icon{
         clear: both;
         width: 100%;
@@ -540,6 +659,10 @@ footer{
         width: 70%;
         max-width: 300px;
         margin: 0px auto;
+    }
+    div#profile-pic{
+        width: 120px;
+        height: 120px;
     }
 }
 
