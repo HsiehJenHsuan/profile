@@ -19,7 +19,7 @@ $(function() {
 
   $('.scrollwatch').scrollWatch(function (focus) {
       //console.log(focus);
-      console.log(focus.section.id);
+      //console.log(focus.section.id);
       $('#navbar > a').removeClass('active');
       $('#navbar > a[href=#'+focus.section.id+']').addClass('active');
       if(focus.section.id=='hide-menu'){
@@ -67,6 +67,7 @@ $(function() {
   };
 
   myNewChart.Radar(data, options);
+
 
   $(window).load(function() {
       $('#slider-doodleit').nivoSlider();
@@ -155,6 +156,144 @@ $(function() {
       }
     }
   });
+
+  $(window).scroll(function () {
+
+    //console.log($(window).width());
+    //console.log($('#skill').offset().top);
+
+    if ($(window).width() <= 768) {
+      var offsetTop = 600;
+      //console.log($(window).scrollTop() + offsetTop);
+      if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
+
+        $(".toeic").animate({
+          width:"70%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"70%"});
+          }
+        });
+
+        $(".skill-html").animate({
+          width:"75%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"75%"});
+          }
+        });
+
+        $(".skill-css").animate({
+          width:"70%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"70%"});
+          }
+        });
+        $(".skill-js").animate({
+          width:"55%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"55%"});
+          }
+        });
+        $(".skill-php").animate({
+          width:"60%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"60%"});
+          }
+        });
+         $(".skill-obj-c").animate({
+          width:"40%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"40%"});
+          }
+        });
+        $(".skill-java").animate({
+          width:"40%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"40%"});
+          }
+        });
+
+      }
+    }
+    else if($(window).width() > 768){
+      var offsetTop = 600;
+      //console.log($(window).scrollTop() + offsetTop);
+      if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
+        $(".toeic").animate({
+          width:"70%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"70%"});
+          }
+        });
+
+        $(".skill-html").animate({
+          width:"75%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"75%"});
+          }
+        });
+
+        $(".skill-css").animate({
+          width:"70%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"70%"});
+          }
+        });
+        $(".skill-js").animate({
+          width:"60%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"60%"});
+          }
+        });
+        $(".skill-php").animate({
+          width:"60%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"60%"});
+          }
+        });
+         $(".skill-obj-c").animate({
+          width:"40%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"40%"});
+          }
+        });
+        $(".skill-java").animate({
+          width:"40%"
+        }, {
+          duration:'slow', 
+          fail: function() {
+            $(".toeic").css({width:"40%"});
+          }
+        });
+      }   
+    }
+  });
+
 });
 
 
