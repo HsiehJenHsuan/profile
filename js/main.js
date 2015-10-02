@@ -157,76 +157,21 @@ $(function() {
     }
   });
 
-$(window).scroll(function () {
+  $(window).scroll(function () {
 
     //console.log($(window).width());
     //console.log($('#skill').offset().top);
-      var offsetTop = 600;
-      //console.log($(window).scrollTop() + offsetTop);
-      if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
-
-        $(".toeic").animate({
-          width:"70%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"70%"});
-          }
-        });
-
-        $(".skill-html").animate({
-          width:"75%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"75%"});
-          }
-        });
-
-        $(".skill-css").animate({
-          width:"70%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"70%"});
-          }
-        });
-        $(".skill-js").animate({
-          width:"60%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"60%"});
-          }
-        });
-        $(".skill-php").animate({
-          width:"60%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"60%"});
-          }
-        });
-         $(".skill-obj-c").animate({
-          width:"40%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"40%"});
-          }
-        });
-        $(".skill-java").animate({
-          width:"40%"
-        }, {
-          duration:'slow', 
-          fail: function() {
-            $(".toeic").css({width:"40%"});
-          }
-        });
-
-      }
-    
-
+    var offsetTop = 700;
+    //console.log($(window).scrollTop() + offsetTop);
+    if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
+      $(".toeic").addClass('ani-toeic');
+      $(".skill-html").addClass('ani-html');
+      $(".skill-css").addClass('ani-css');
+      $(".skill-js").addClass('ani-js');
+      $(".skill-php").addClass('ani-php');
+      $(".skill-obj-c").addClass('ani-obj-c');
+      $(".skill-java").addClass('ani-java');
+    }
   });
   
 
