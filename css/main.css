@@ -169,6 +169,11 @@ h2{
 .detail-right-content > .bold{
     font-size: 1.4em;
 }
+.mark{
+    background-image: -webkit-linear-gradient(transparent 31%, #ff3 31%, #ff3 55%, transparent 61%);
+    background-image: -o-linear-gradient(transparent 31%, #ff3 31%, #ff3 55%, transparent 61%);
+    background-image: linear-gradient(transparent 31%, #ff3 31%, #ff3 55%, transparent 61%);
+}
 .mfp-content{
 
     margin: 0px auto;
@@ -335,7 +340,7 @@ li.skill-bar .bar-expand{
     width: 75%;
     -webkit-animation-name: skill-html; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
-    animation-name: skill-html;
+    animation-name: skill-html;  
     animation-duration: 2s;
 }
 .ani-css{
