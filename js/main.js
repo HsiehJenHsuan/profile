@@ -1,5 +1,15 @@
-//scroll smooth : https://css-tricks.com/snippets/jquery/smooth-scrolling
 $(function() {
+
+  /* scrollDepth */
+  $.scrollDepth();
+
+  /* text-fit */
+  setTimeout(function() {
+    $('#title').fitText(1, { minFontSize: '20px', maxFontSize: '90px' });
+  }, 100);
+
+  /* smoth scrolling */
+  //scroll smooth : https://css-tricks.com/snippets/jquery/smooth-scrolling
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -13,10 +23,7 @@ $(function() {
     }
   });
   
-  setTimeout(function() {
-    $('#title').fitText(1, { minFontSize: '20px', maxFontSize: '90px' });
-  }, 100);
-
+  /* scroll-watch*/
   $('.scrollwatch').scrollWatch(function (focus) {
       //console.log(focus);
       //console.log(focus.section.id);
@@ -41,6 +48,7 @@ $(function() {
       focusOffset:0
   });
 
+  /*radar chart*/
   // Get context with jQuery - using jQuery's .get() method.
   var ctx = $("#trait-chart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
@@ -68,7 +76,25 @@ $(function() {
 
   myNewChart.Radar(data, options);
 
+  /* skill bar animate */
+  $(window).scroll(function () {
 
+    //console.log($(window).width());
+    //console.log($('#skill').offset().top);
+    var offsetTop = 700;
+    //console.log($(window).scrollTop() + offsetTop);
+    if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
+      $(".toeic").addClass('ani-toeic');
+      $(".skill-html").addClass('ani-html');
+      $(".skill-css").addClass('ani-css');
+      $(".skill-js").addClass('ani-js');
+      $(".skill-php").addClass('ani-php');
+      $(".skill-obj-c").addClass('ani-obj-c');
+      $(".skill-java").addClass('ani-java');
+    }
+  });
+
+  /*nivo slider stop*/
   $(window).load(function() {
       $('#slider-doodleit').nivoSlider();
       $('#slider-doodleit').data('nivoslider').stop();
@@ -87,6 +113,7 @@ $(function() {
 
     });
 
+  /* magnific popup */
   $('.portfolio-link').magnificPopup({
       type:'inline',
       midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
@@ -156,24 +183,5 @@ $(function() {
       }
     }
   });
-
-  $(window).scroll(function () {
-
-    //console.log($(window).width());
-    //console.log($('#skill').offset().top);
-    var offsetTop = 700;
-    //console.log($(window).scrollTop() + offsetTop);
-    if ($(window).scrollTop() + offsetTop  > $('#skill').offset().top){
-      $(".toeic").addClass('ani-toeic');
-      $(".skill-html").addClass('ani-html');
-      $(".skill-css").addClass('ani-css');
-      $(".skill-js").addClass('ani-js');
-      $(".skill-php").addClass('ani-php');
-      $(".skill-obj-c").addClass('ani-obj-c');
-      $(".skill-java").addClass('ani-java');
-    }
-  });
-  
-
 
 });
